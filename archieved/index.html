@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSV Table Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      input {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Upload CSV File</h2>
+    <input type="file" id="csvFileInput" accept=".csv" />
+    <table id="dataTable"></table>
+
+    <script>
+      document
+        .getElementById("csvFileInput")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          if (!file) return;
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const text = e.target.result;
+            const rows = text.split("\n").map((row) => row.split(","));
+
+            const table = document.getElementById("dataTable");
+            table.innerHTML = "";
+
+            rows.forEach((row, index) => {
+              let tr = document.createElement("tr");
+              row.forEach((cell) => {
+                let td = document.createElement(index === 0 ? "th" : "td");
+                td.textContent = cell.trim();
+                tr.appendChild(td);
+              });
+              table.appendChild(tr);
+            });
+          };
+          reader.readAsText(file);
+        });
+    </script>
+  </body>
+</html>
