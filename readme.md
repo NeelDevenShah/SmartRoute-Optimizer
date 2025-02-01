@@ -6,6 +6,10 @@
 
 ## Core Algorithm Design
 
+## [Competition Presentation](./assets/Presentation.pdf)
+
+## [Detailed Report](./assets/Documentation.pdf)
+
 ### Distance Calculation System
 
 The foundation of the routing system is built on accurate geographical distance calculations using the Haversine formula. This mathematical approach accounts for Earth's spherical shape when calculating distances between two points given their latitude and longitude coordinates. The formula provides precise distance measurements in kilometers, making it particularly suitable for urban delivery scenarios where accuracy is crucial.
@@ -120,6 +124,44 @@ The algorithm simultaneously handles multiple operational constraints:
    - Comprehensive metric tracking
    - Utilization analysis
    - Efficiency assessment
+
+#### Statistics
+
+#### Summary Statistics
+
+| Metric                       | Value  |
+| ---------------------------- | ------ |
+| Total number of trips        | 248    |
+| Average capacity utilization | 77.88% |
+| Average time utilization     | 69.68% |
+
+### Vehicle Fleet Statistics
+
+This document provides detailed statistics about our vehicle fleet operations, including trip data, capacity utilization, and fleet distribution.
+
+#### Detailed Statistics per Vehicle Type
+
+| Vehicle Type | Number of Trips | Avg Shipments per Trip |
+| ------------ | --------------- | ---------------------- |
+| 3W           | 25              | 4.00                   |
+| 4W           | 198             | 4.77                   |
+| 4W-EV        | 25              | 7.00                   |
+
+#### Average Capacity Utilization
+
+| Vehicle Type | Avg Capacity Utilization |
+| ------------ | ------------------------ |
+| 3W           | 0.80                     |
+| 4W           | 0.76                     |
+| 4W-EV        | 0.88                     |
+
+#### Vehicle Distribution Percentages
+
+| Vehicle Type | Percentage |
+| ------------ | ---------- |
+| 4W           | 79.84%     |
+| 4W-EV        | 10.08%     |
+| 3W           | 10.08%     |
 
 ### Future Enhancement Possibilities
 
